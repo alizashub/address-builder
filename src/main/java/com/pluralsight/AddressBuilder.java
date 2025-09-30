@@ -10,7 +10,8 @@ public class AddressBuilder {
         customerInformation.append(fullName).append("\n");
 
         // Billing Address
-        System.out.print("Billing Street: ");
+        System.out.println("\nPlease provide your billing address information below.");
+        System.out.print("Billing Street : ");
         String billingStreet = myScanner.nextLine();
         System.out.print("Billing City: ");
         String billingCity = myScanner.nextLine();
@@ -20,15 +21,17 @@ public class AddressBuilder {
         String billingZip = myScanner.nextLine();
 
 // Append billing address to StringBuilder
-        customerInformation.append("Billing Address: ")
-                .append(billingStreet).append(" ")
-                .append(billingCity).append(", ")
-                .append(billingState).append(" ")
-                .append(billingZip)
-                .append("\n");
+
+        customerInformation.append("Billing Address : ");
+        customerInformation.append(billingStreet).append(" ");
+        customerInformation.append(billingCity).append(", ");
+        customerInformation.append(billingState).append(" ");
+        customerInformation.append(", ").append(billingZip);
+        customerInformation.append("\n");
 
 // Shipping Address
-        System.out.print("Shipping Street: ");
+        System.out.println("\nPlease provide your shipping address information below.");
+        System.out.print("\nShipping Street: ");
         String shippingStreet = myScanner.nextLine();
         System.out.print("Shipping City: ");
         String shippingCity = myScanner.nextLine();
@@ -38,15 +41,18 @@ public class AddressBuilder {
         String shippingZip = myScanner.nextLine();
 
 // Append shipping address to StringBuilder
-        customerInformation.append("Shipping Address: ")
-                .append(shippingStreet).append(" ")
-                .append(shippingCity).append(", ")
-                .append(shippingState).append(" ")
-                .append(shippingZip)
-                .append("\n");
+        customerInformation.append("/n").append("Shipping Address: ");
+        customerInformation.append(shippingStreet).append(" ");
+        customerInformation.append(shippingCity).append(", ");
+        customerInformation.append(shippingState).append(" ");
+        customerInformation.append(", ").append(shippingZip);
+        customerInformation.append("\n");
 
-// Print all info
-        System.out.println("\nCustomer Information:");
-        System.out.println(customerInformation.toString());
+
+ // convert to string
+ String addressInformation = customerInformation.toString();
+
+// Print
+        System.out.println(addressInformation);
     }
 }
